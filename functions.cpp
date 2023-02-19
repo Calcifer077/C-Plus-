@@ -17,3 +17,28 @@ int fact(int a){
 	}
 	cout<<" "<<product;
 }
+.......>
+//
+#include<iostream>
+using namespace std;
+int prime(int a, int b);
+int main(){
+	int a,b;
+	cout<<"ENter the limit:";
+	cin>>a>>b;
+	prime(a,b);
+	return 0;
+}
+int prime(int a, int b){
+	int i,j;
+	for(i=a;i<b;i++){
+		for(j=2;j<i;j++){
+			if(i%j==0){
+				break;
+			}
+		}
+		if(j==i){
+			cout<<i<<" ";
+		}
+	}
+}
