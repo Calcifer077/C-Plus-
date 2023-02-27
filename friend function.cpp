@@ -29,3 +29,37 @@ int main(){
 	sum = sumComplex(c1, c2);
 	sum.printNumber();
 }
+.......>
+//using friend function to add two numbers
+#include<iostream>
+
+using namespace std;
+
+class number{
+	int a;
+	public:
+		void getdata(int m){
+			a = m;
+		}
+		void display(){
+			cout<<"Your number is "<<a;
+		}
+		friend number sumnumber(number o1, number o2);
+};
+number sumnumber(number o1, number o2){
+	number o3;
+	o3.getdata(o1.a + o2.a);
+	return o3;
+}
+int main(){
+	number c1,c2,sum;
+	int a,b;
+	cout<<"Enter two numbers:";
+	cin>>a>>b;
+	c1.getdata(a);
+	c2.getdata(b);
+	sum = sumnumber(c1, c2);
+	sum.display();
+	return 0;
+}
+........>
