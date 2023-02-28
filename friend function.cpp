@@ -63,3 +63,38 @@ int main(){
 	return 0;
 }
 ........>
+#include<iostream>
+
+using namespace std;
+class number;
+class calculator{
+	public:
+		int add(int a, int b){
+			return (a+b);
+		}
+		int sumreal(number, number);
+}; 
+class number{
+	int a,b;
+	friend int calculator::sumreal(number o1, number o2);
+	public:
+		void setnumber(int n1, int n2){
+			a = n1;
+			b = n2;
+		}
+		void display(){
+			cout<<"Your number is "<<a<<" + "<<b;
+		}
+};
+int calculator::sumreal(number o1, number o2){
+	return ((o1.a + o2.a));
+}
+int main(){
+	number c1,c2,sum;
+	c1.setnumber(3,4);
+	c2.setnumber(5,6);
+	calculator calc;
+	int res = calc.sumreal(c1,c2);
+	cout<<"SUm of the real part of the number is"<<res<<endl;
+	return 0;
+}
