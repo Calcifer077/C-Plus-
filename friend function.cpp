@@ -80,6 +80,8 @@ class number{
 	friend int calculator::sumreal(number o1, number o2);//making the friend function so that calculator can access private data of number class.
 	// also with the datatype of the function which we will use.
 	friend int calculator::sumimaginary(number o1, number o2);
+	//instead of declaring each function as friend we can do it globally also.
+	friend class calculator;
 	public:
 		void setnumber(int n1, int n2){
 			a = n1;
@@ -102,5 +104,40 @@ int main(){
 	calculator calc;//creating a object of calculator function to store the data of the same data type. 
 	int res = calc.sumreal(c1,c2);
 	cout<<"SUm of the real part of the number is"<<res<<endl;
+	return 0;
+}
+..........>
+#include<iostream>
+
+using namespace std;
+
+class B;
+
+class A{
+	int data;
+	friend void sum(A, B); 	
+	public:
+		void setdata(int value){
+			data = value;
+		}
+};
+class B{
+	int num;
+	friend void sum(A, B); 	
+	public:
+		void setdata(int value){
+			num = value;
+		}
+};
+void sum(A o1, B o2){
+	cout<<"SUm = "<<o1.data + o2.num;
+}
+int main(){
+	A c1;
+	B c2;
+	c1.setdata(10);
+	c2.setdata(20);
+	
+	sum(c1 , c2);
 	return 0;
 }
