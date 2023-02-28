@@ -66,17 +66,18 @@ int main(){
 #include<iostream>
 
 using namespace std;
-class number;
+class number;//forward declaration otherwise complier will say where is number class when we are using it in the calculator function.
 class calculator{
 	public:
 		int add(int a, int b){
 			return (a+b);
 		}
-		int sumreal(number, number);
+		int sumreal(number, number);//no objects declared here.
 }; 
 class number{
 	int a,b;
-	friend int calculator::sumreal(number o1, number o2);
+	friend int calculator::sumreal(number o1, number o2);//making the friend function so that calculator can access private data of number class.
+	// also with the datatype of the function which we will use.
 	public:
 		void setnumber(int n1, int n2){
 			a = n1;
@@ -88,12 +89,12 @@ class number{
 };
 int calculator::sumreal(number o1, number o2){
 	return ((o1.a + o2.a));
-}
+}//definition of the function here because we can't use objects above.
 int main(){
-	number c1,c2,sum;
+	number c1,c2;
 	c1.setnumber(3,4);
 	c2.setnumber(5,6);
-	calculator calc;
+	calculator calc;//creating a object of calculator function to store the data of the same data type. 
 	int res = calc.sumreal(c1,c2);
 	cout<<"SUm of the real part of the number is"<<res<<endl;
 	return 0;
