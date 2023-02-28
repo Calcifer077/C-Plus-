@@ -73,11 +73,13 @@ class calculator{
 			return (a+b);
 		}
 		int sumreal(number, number);//no objects declared here.
+		int sumimaginart(number, number);
 }; 
 class number{
 	int a,b;
 	friend int calculator::sumreal(number o1, number o2);//making the friend function so that calculator can access private data of number class.
 	// also with the datatype of the function which we will use.
+	friend int calculator::sumimaginary(number o1, number o2);
 	public:
 		void setnumber(int n1, int n2){
 			a = n1;
@@ -90,6 +92,9 @@ class number{
 int calculator::sumreal(number o1, number o2){
 	return ((o1.a + o2.a));
 }//definition of the function here because we can't use objects above.
+int calculator::sumimaginary(number o1, number o2){
+	return (o1.b + o2.b);
+}
 int main(){
 	number c1,c2;
 	c1.setnumber(3,4);
