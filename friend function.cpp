@@ -141,3 +141,56 @@ int main(){
 	sum(c1 , c2);
 	return 0;
 }
+..........>
+//swapping the variables of the class by using friend function.
+#include<iostream>
+
+using namespace std;
+
+class c2;//forward declration
+class c1{
+	public:
+		int value1;
+		friend void exchange(c1 &, c2 &);//write everything the same as you deefine the function.
+		//dont write about the variables of the funtion as the compiler will start reading fom aboev and it will not know about them.
+	
+		void getdata(int a){
+			value1 = a;
+		}
+		void display(){
+			cout<<value1<<endl;
+		}
+	
+};
+class c2{
+	public:
+		int value2;
+		friend void exchange(c1 &, c2 &);
+	
+		void getdata(int a){
+			value2 = a;
+		}
+		void display(){
+			cout<<value2<<endl;
+		}
+};
+
+void exchange(c1 &x, c2 &y){//&requried otherwise value will not be changed.
+//As if we dont ise & only the copies of the variables are passed to the fucntion so no change on actual value.
+	int temp = x.value1;
+	x.value1 = y.value2;
+	y.value2 = temp;
+}
+int main(){
+	c1 o1;
+	c2 o2;
+	
+	o1.getdata(34);
+	o2.getdata(45);
+	exchange(o1, o2);
+	cout<<"The value of o1 after exchange becomes:";
+	o1.display();
+	cout<<"The value of o2 after exchange becomes:";
+	o2.display();
+	return 0;
+}
