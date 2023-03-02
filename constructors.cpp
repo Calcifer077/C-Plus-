@@ -117,3 +117,36 @@ int main(){
 	c1.print();
 	return 0;
 }
+.........>
+//program to calculate distancee between two points
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+class point{
+	double x, y, d;
+	friend void calc(point p1, point p2);
+	public:
+		point(int a, int b){
+			x =a;
+			y =b;	
+		}  
+		
+		void display(){
+			cout<<"The point is "<<x<<" + "<<y<<endl;
+	}
+};
+void calc(point p1, point p2){
+	double a = (p1.x - p2.x);
+	double b = (p2.y - p2.y);
+	double d = sqrt(pow(a,2) + pow(b,2));
+	cout<<"THE distance between two points is "<<d;
+}
+int main(){     		
+	point p1(1 ,0);
+	p1.display();
+	point p2(70,0);
+	p2.display();
+	calc(p1,p2);
+	return 0;
+}
