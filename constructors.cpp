@@ -150,3 +150,36 @@ int main(){
 	calc(p1,p2);
 	return 0;
 }
+.........>
+//constructor overloading
+#include<iostream>
+
+using namespace std;
+
+class complex{
+	int a,b;
+	public:
+		complex(int x, int y){
+			a = x;
+			b = y;
+		}
+		complex(int x){
+			a  = x;
+		}
+		complex(){
+			a = 0;
+			b = 0;
+		}
+		void display(){
+			cout<<a<<"+ "<<b<<endl;
+		}
+};
+int main(){
+	complex c1(4,6);
+	complex c2(8);
+	complex c3;
+	c1.display();
+	c2.display();
+	c3.display();
+	return 0;
+}
