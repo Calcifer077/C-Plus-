@@ -183,3 +183,26 @@ int main(){
 	c3.display();
 	return 0;
 }
+...........>
+#include<iostream>
+using namespace std;
+
+class simple{
+	int data1;
+	int data2;
+	public:
+		simple(int a, int b = 9){
+			data1 = a;
+			data2 = b;
+		}
+		void display(){
+			cout<<"The value of data is "<<data1<<" and "<<data2;
+		}
+};
+
+int main(){     		
+	simple obj(1,7);//if we were not to give value of 'b' here it would have printed the value given above that is 9.
+	obj.display();
+	return 0;
+}
+............>
