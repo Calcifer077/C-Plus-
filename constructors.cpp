@@ -272,3 +272,34 @@ int main(){
 	//It will not be correct if we declare the object in some other line and try to use it in the copy construtor/
 	return 0;
 }
+.................>
+#include<iostream>
+
+using namespace std;
+//destructor never takes an argument nor does it return any value.
+int count = 0;
+class num{
+	public:
+		num(){
+			count++;
+			cout<<"Constructor is called"<<count<<endl;
+		}
+		~num(){
+			cout<<"Destructor is called"<<count<<endl;
+			count--;
+		}
+};
+int main(){ 
+	cout<<"Inside main function"<<endl;
+	cout<<"Creating main funtion"<<endl;
+	num obj1;
+	{
+		cout<<"Entering this block"<<endl;
+		cout<<"Creating two more objects"<<endl;
+		num obj2, obj3;
+		cout<<"Exiting this block"<<endl;
+	}
+	cout<<"Back to main function"<<endl;
+	return 0;
+}
+........>
