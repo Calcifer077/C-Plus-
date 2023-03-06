@@ -193,7 +193,38 @@ class simple{
 	public:
 		simple(int a, int b = 9){
 			data1 = a;
-			data2 = b;
+			data2 = b;#include<iostream>
+
+using namespace std;
+
+class number{
+	int a;
+	public:
+		number(){}//default constructor. It is required when other type of constructor are used int he format
+		number(int num){
+			a = num;
+		}
+		//when no copy constructor is found compiler supplies its own copy constructor.
+		number(number &obj){
+			cout<<"Copy constructor called: "<<endl;
+			a = obj.a;
+		}
+		void display(){
+			cout<<"The number for this object is "<<a<<endl;
+		}
+};
+
+
+int main(){
+	number x,y,z(4);
+	z.display();
+	x.display();
+	y.display();
+	number z1(x);//copy constructor invoked
+	z1.display();
+	
+	return 0;
+}
 		}
 		void display(){
 			cout<<"The value of data is "<<data1<<" and "<<data2;
@@ -206,3 +237,38 @@ int main(){
 	return 0;
 }
 ............>
+#include<iostream>
+
+using namespace std;
+
+class number{
+	int a;
+	public:
+		number(){}//default constructor. It is required when other type of constructor are used int he format
+		number(int num){
+			a = num;
+		}
+		//when no copy constructor is found compiler supplies its own copy constructor.
+		number(number &obj){
+			cout<<"Copy constructor called: "<<endl;
+			a = obj.a;
+		}
+		void display(){
+			cout<<"The number for this object is "<<a<<endl;
+		}
+};
+
+
+int main(){
+	number x,y,z(4);
+	z.display();
+	x.display();
+	y.display();
+	number z1(x);//copy constructor invoked
+	z1.display();
+	//copy constructor will be invoked only when it is declared and used in the same line.
+	//like:
+	number z2 = z;//valid
+	//It will not be correct if we declare the object in some other line and try to use it in the copy construtor/
+	return 0;
+}
