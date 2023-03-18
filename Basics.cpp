@@ -61,3 +61,37 @@ int main(){
 	return 0;
 }
 .......>
+//....................................CONSTANTS....................................
+//Constants are the value which can't be changed during the execution of a program.
+#include<iostream>
+
+using namespace std;
+
+int main(){
+	const int a = 54;//here we are declaring 'a' as a constant using 'const' keyword.
+	//of we were to give 'a' any other value we will get an error.
+	cout<<"The value of a is:"<<a;
+	
+	return 0;
+}
+........>
+//....................................MANIPULATORS...............................
+//Manipulators are used for formattng your text.
+//One is 'endl' which marks the end of the line.
+//Another is 'setw' which gives a particular size to your outout.
+//To use 'setw' we should use '<iomanip>
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main(){
+	int a = 1,b = 12, c = 123;
+	cout<<"THe value of a without setw is"<<a<<endl;
+	cout<<"THe value of b without setw is"<<b<<endl;
+	cout<<"THe value of c without setw is"<<c<<endl;
+	
+	cout<<"The value of a with setw is"<<setw(4)<<a<<endl;
+	cout<<"The value of b with setw is"<<setw(4)<<b<<endl;
+	cout<<"The value of c with setw is"<<setw(4)<<c<<endl;
+	return 0;
+}
