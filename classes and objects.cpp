@@ -127,3 +127,40 @@ int main(){
 	c2.display();
 	return 0;
 }
+.........................................................................................
+.........................................................................................
+.........................................................................................
+	.................PRACTICE QUESTIONS...............
+/*
+Write a program to print the area of two rectangles having sides (4,5) and (5,8)
+respectively by creating a class named 'Rectangle' with a function named 'Area' 
+which returns the area. Length and breadth are passed as parameters to its 
+constructor.
+*/
+#include<iostream>
+using namespace std;
+
+class rectangle{
+	int a,b;
+	public:
+		rectangle(int x, int y){
+			a = x;
+			b = y;
+		}
+		void area();
+};
+void rectangle::area(){
+	int c;
+	c = a * b;
+	cout<<"The area for the following a '"<< a << "' and b '"<< b << "' is '"<<c<<"'"<<endl;
+}
+int main(){
+	rectangle obj1(4,5);
+	rectangle obj2(5,8);
+	obj1.area();
+	obj2.area();
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
