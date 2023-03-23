@@ -23,6 +23,11 @@ Say a single parent have more than one children.
 ...........HYBRID INHERITANCE...............
 In thsi type more than one type of inheritance is used.
 ...........................................
+There are visibility mode in classes. Like the data from the base class will be accessible to the derived class in what manner.
+Default visibility mode is private.
+During private mode, Public members of the base class becomes private members of the derived class.
+During public mode, Public members remain public in the derived class.
+The private class of the base class are never inherited in the derived class.
 */
 #include<iostream>
 using namespace std;
@@ -156,3 +161,142 @@ int main(){
       cout<<"THAnks for using it.";
 return 0;
 }
+.........................................................................................
+.........................................................................................
+.........................................................................................
+#include<iostream>
+using namespace std;
+
+class employee{
+	public:
+	int id;
+	float salary;
+	
+	employee(int x){
+		id = x;
+		salary = 100;
+	}
+	employee(){}
+	
+};
+class base : employee{//No visibilty mode hence it is private.
+	public:
+	base(int y){
+		id = y;
+	}
+	int languagecode = 9;
+	void getdata(){
+		cout<<id<<endl;//to print the value of id because we can't access it outside this class.
+	}
+};
+int main(){
+	employee obj1(1), obj2(2);
+	cout<<obj1.id<<endl;
+	cout<<obj2.salary<<endl;
+	base obj3(7);
+	obj3.getdata();
+	return 0;
+}
+#include<iostream>
+using namespace std;
+class base{
+	int data1;
+	public:
+		int data2;
+		void setdata();
+		int getdata1();
+		int getdata2();
+};
+void base::setdata(){
+	data1 = 10;
+	data2 = 20;
+}
+int base::getdata1(){
+	return data1;
+}
+int base::getdata2(){
+	return data2;
+}
+class derived : public base{
+	int data3;
+	public:
+		void process();
+		void display();
+		
+};
+void derived::process(){
+	data3 = (data2 * getdata1());
+}
+void derived::display(){
+	cout<<"Value of data 1 is "<<getdata1()<<endl;
+	cout<<"Value of data 2 is"<<data2<<endl;
+	cout<<"Value of data 3 is"<<data3<<endl;
+}
+int main(){
+	derived obj;
+	obj.setdata();
+	obj.process();
+	obj.display();
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
+//Same as the above program just with private visibilty mode.
+#include<iostream>
+using namespace std;
+class base{
+	int data1;
+	public:
+		int data2;
+		void setdata();
+		int getdata1();
+		int getdata2();
+};
+void base::setdata(){
+	data1 = 10;
+	data2 = 20;
+}
+int base::getdata1(){
+	return data1;
+}
+int base::getdata2(){
+	return data2;
+}
+class derived : base{
+	int data3;
+	public:
+		void process();
+		void display();
+		
+};
+void derived::process(){//visibilty mode private hence can't directly acces members of the base class in the main function. And entierly
+    //can't access data1.
+	setdata();
+	data3 = (data2 * getdata1());
+}
+void derived::display(){
+	cout<<"Value of data 1 is "<<getdata1()<<endl;
+	cout<<"Value of data 2 is"<<data2<<endl;
+	cout<<"Value of data 3 is"<<data3<<endl;
+}
+int main(){
+	derived obj;
+	obj.process();
+	obj.display();
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
+/*
+                            Public derivation       Private derivation      Protected derivation
+1. Private members              Not Inherited           Not Inherited           Not Inherited
+2. Protected members            Protected               Private                 Protected
+3. Public members               Public                  Private                 Protected
+
+Protected members can be inherited in the next class but will act as protected members(kind of same behaviour as private members).
+*/
+.........................................................................................
+.........................................................................................
+.........................................................................................   
