@@ -164,3 +164,37 @@ int main(){
 .........................................................................................
 .........................................................................................
 .........................................................................................
+/*
+Print the average of three numbers entered by the user 
+by creating a class named 'Average' having a function 
+to calculate and print the average without creating 
+any object of the Average class.
+*/
+#include<iostream>
+using namespace std;
+class average{
+	int a,b,c;
+	public:
+		average(int x, int y, int z){
+			a = x; 
+			b = y;
+			c = z;
+		}
+		void display();
+};
+void average::display(){
+	int ave;
+	ave = (a + b + c)/3;
+	cout<<"The average of the three inputted number is "<<ave<<endl;
+}
+int main(){
+	int a,b,c;
+	cout<<"Enter three numbers of whose you want to find the average: ";
+	cin>>a>>b>>c;
+	average obj1(a,b,c);
+	obj1.display();
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
