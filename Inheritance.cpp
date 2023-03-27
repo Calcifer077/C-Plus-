@@ -300,3 +300,98 @@ Protected members can be inherited in the next class but will act as protected m
 .........................................................................................
 .........................................................................................
 .........................................................................................   
+..................MULTILEVEL INHERITANCE.............	
+#include<iostream>
+using namespace std;
+
+class student{
+	protected:
+		int roll_number;
+	public:
+		void set_rollnumber(int);
+		void get_rollnumber();
+};
+void student::set_rollnumber(int r){
+	roll_number = r;
+}
+void student::get_rollnumber(){
+	cout<<"The roll number is "<<roll_number<<endl;
+}
+
+class exam:public student{
+	protected:
+		float maths;
+		float physics;
+	public:
+		void set_marks(float, float);
+		void get_marks();
+};
+void exam::set_marks(float a, float b){
+	maths = a;
+	physics = b;
+}
+void exam::get_marks(){
+	cout<<"Marks in maths: "<<maths<<endl;
+	cout<<"Marks in physics: "<<physics<<endl;
+}
+class result:public exam{
+	float percentage;
+	public:
+		void display(){
+			get_rollnumber();
+			get_marks();
+			cout<<"Percentage is"<<(maths + physics)/2<<endl;
+		}
+};
+int main(){
+	result obj1;
+	obj1.set_rollnumber(123);
+	obj1.set_marks(10,30);
+	obj1.display(); 
+	return 0;
+}
+/*
+If we are inheriting B from A and C from B:[A--->B--->c]
+1. A is the base class for B and B is the base class for C.
+2. A--->B--->C is called Inheritance path.
+*/
+.........................................................................................
+.........................................................................................
+.........................................................................................
+..................MULTIPLE INHERITANCE...........
+#include<iostream>
+using namespace std;
+
+class Base1{
+	protected:
+		int base1int;
+	public:
+		void set_base1int(int a){
+			base1int = a;
+		}
+};
+class Base2{
+	protected:
+		int base2int;
+	public:
+		void set_base2int(int b){
+			base2int = b;
+		}
+};
+class derived: public Base1, public Base2{
+	public:
+		void show(){
+			cout<<"The value of Base 1 is "<<base1int<<endl;//base1int is protected
+			cout<<"The value of Base 2 is "<<base2int<<endl;//base2int is protected
+			cout<<"The sum is "<<base1int + base2int<<endl;
+		}
+};
+int main(){
+	derived obj;
+	obj.set_base1int(5);
+	obj.set_base2int(34);
+	obj.show();
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
