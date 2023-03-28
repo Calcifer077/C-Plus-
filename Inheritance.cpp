@@ -395,3 +395,33 @@ int main(){
 .........................................................................................
 .........................................................................................
 .........................................................................................
+#include<iostream>
+using namespace std;
+
+class base1{
+	public:
+		void greet(){
+			cout<<"HOw are you!";
+		}
+};
+class base2{
+	public:
+		void greet(){
+			cout<<"How are you_1";
+		}
+};
+class derived: public base1, public base2{
+	public:/*
+	could also write instead of the whole given under
+	base1::greet();  In this way the derived class will only use the function in the mentioned class, which in this case is base1.
+	*/
+		void greet(){
+			cout<<"Hello";
+		}
+};
+int main(){
+	derived obj;
+	obj.greet();//It would have a problem of ambiguity if greet was not declared in the derived class as their are similar functions in the above classes.
+	//We can also resolve this problem by declaring which class function to use.
+	return 0;
+}
