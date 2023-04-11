@@ -198,3 +198,92 @@ int main(){
 .........................................................................................
 .........................................................................................
 .........................................................................................
+#include<iostream>
+using namespace std;
+
+class complex{
+	int real, imaginary;
+	public:
+		void getdata(){
+			cout<<"The real part is "<<real<<endl;
+			cout<<"The imaginary part is "<<imaginary<<endl;
+		}
+		void setdata(int a, int b){
+			real = a;
+			imaginary = b;
+		}
+};
+int main(){
+	complex c1;
+	complex *ptr = &c1;//complex *ptr = new complex;
+	//The above line can also be used without above two lines.
+	(*ptr).setdata(3,4);            //ptr->setdata(3,4);
+	(*ptr).getdata();               //ptr->getdata();	These two can be used.
+	// "->"It is the arrow operator.
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
+#include<iostream>
+using namespace std;
+
+class complex{
+	int real, imaginary;
+	public:
+		void getdata(){
+			cout<<"The real part is "<<real<<endl;
+			cout<<"The imaginary part is "<<imaginary<<endl;
+		}
+		void setdata(int a, int b){
+			real = a; 
+			imaginary = b;
+		}
+};
+int main(){
+	complex *ptr = new complex[4];
+	ptr->setdata(1,4);
+	ptr->getdata();
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
+#include<iostream>
+using namespace std;
+
+class shop{
+	int id;
+	int price;
+	public:
+		void setdata(int a, int b){
+			id = a;
+			price = b;
+		}
+		void getdata(){
+			cout<<"Code of this item is "<<id<<endl;
+			cout<<"Price of this item is "<<price<<endl;
+		}
+};
+int main(){
+	int size = 3;
+	shop *ptr = new shop [size];
+	shop *ptrtemp = ptr;
+	int p,q,i;
+	for(i =0;i<size;i++){
+		cout<<"Enter ID and price of item "<<i+1<<" ";
+		cin>>p>>q;
+		//(*ptr).setdata(p , q);
+		ptr->setdata(p,q);
+		ptr++;
+	}
+	for(i =0; i<size;i++){
+		cout<<"Item number: "<<i+1<<endl;
+		ptrtemp->getdata();
+		ptrtemp++;
+	}
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
