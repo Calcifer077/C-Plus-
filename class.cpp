@@ -54,3 +54,33 @@ int main(){
 	obj1 + obj2;
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+class demo{
+	int a;
+	public:
+	demo(int a){
+		
