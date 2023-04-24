@@ -53,6 +53,35 @@ int main(){
 #include<iostream>
 using namespace std;
 
+int main(){
+	int number[5];
+	/*cout<<number<<endl;//Both will have the same output.
+	cout<<&number[0]<<endl;//Both will have the same output.
+	
+	
+	cout<<number[2]<<endl;//Both will have the same output.
+	cout<<*(number+2)<<endl;//Both will have the same output.
+	*/
+	
+	
+	for(int i = 0;i<=4;i++){
+		cout<<"Enter number: ";
+		cin>>number[i];
+	}
+	for(int i = 0;i<=4;i++){
+		cout<<"Numbers are: ";
+		cout<<*(number+i)<<endl;
+	}
+	
+	
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
+#include<iostream>
+using namespace std;
+
 class A{
 	int a;
 	public:
