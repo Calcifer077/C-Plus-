@@ -1,3 +1,4 @@
+//THE SIZE OF THE ARRAY IS CONSTANT. IF WE WANT THE USER TO ENTER THE SIZE OF THE ARRAY, WE NEED TO USE DYNAMIC MEMORY ALLOCATION.
 #include<iostream>
 using namespace std;
 
@@ -79,6 +80,72 @@ int main(){
 .........................................................................................
 .........................................................................................
 .........................................................................................
+#include<iostream>
+using namespace std;
+
+int getmin(int number[], int size){
+	int min = number[0];
+	for(int i = 1; i<size;i++){
+		if(number[i]<min){
+			min = number[i];
+		}
+		return min;
+	}
+}
+int getmax(int number[], int size){
+	int max = number[0];
+	for(int i = 0; i<size;i++){
+		if(number[i]>max){
+			max = number[i];
+		}
+		return max;
+	}
+}
+void getminandmax(int number[], int size, int *min, int *max){
+	for(int i =1;i<size;i++){
+		if(number[i] > *max){
+			*max = number[i];
+		}
+		if(number[i] < *min){
+			*min = number[i];
+		}
+	}
+}
+int main(){
+	int number[5] = {1,3,-5,7,9};
+	int max = number[0];
+	int min = number[0];
+	//cout<<"Min is "<<getmin(number, 5)<<endl;
+	//cout<<"MAx is "<<getmax(number, 5)<<endl;
+	getminandmax(number, 5, &min, &max);
+	cout<<"Max is "<<max<<endl;
+	cout<<"Min is "<<min<<endl;
+
+	return 0;
+}
+...........>
+#include<iostream>
+using namespace std;
+
+int main(){
+	int size;
+	cout<<"Enter size: "<<endl;
+	cin>>size;
+	int *arr = new int[size];
+	for(int i = 0; i <size ; i++){
+		cout<<"Enter array elements "<< i <<" : "<<endl;
+		cin>>arr[i];
+	}
+	for(int i = 0; i<size;i++){
+		//cout<<arr[i]<<" "<<endl;//BOTH ARE SAME.
+		cout<<*(arr+i);//BOTH ARE SAME.
+	}
+	
+	delete[]arr;
+	arr = NULL;
+	return 0;
+}
+...........>
 #include<iostream>
 using namespace std;
 
