@@ -1,4 +1,9 @@
 //THE SIZE OF THE ARRAY IS CONSTANT. IF WE WANT THE USER TO ENTER THE SIZE OF THE ARRAY, WE NEED TO USE DYNAMIC MEMORY ALLOCATION.
+//A POINTER OF A BASE CLASS CAN ONLY ACCESS THE DATA OF BASE CLASS EVEN IF IT IS GIEVN THE ADDRESS OF THE PBJECT OF DERIVED CLASS.Like:
+		int main(){
+			baseclass *base_class_pointer;
+			base_class_pointer = &derived_class_object;//it can't access the data of the derived class as it is the pointer 
+									of the base class.
 #include<iostream>
 using namespace std;
 
@@ -189,6 +194,26 @@ int main(){
 	//invokes the member function.
 	A obj; 
 	obj.setdata(10).getdata();
+	return 0;
+}
+.........................................................................................
+.........................................................................................
+.........................................................................................
+#include<iostream>
+using namespace std;
+
+class baseclass{
+	public:
+		int var1;
+		void display(){
+			cout<<"Hello";
+		}
+};
+int main(){
+	baseclass *base_class_pointer;
+	baseclass obj1;
+	base_class_pointer = &obj1;//pointer pointing to the baseclass object.
+	base_class_pointer->display();
 	return 0;
 }
 .........................................................................................
