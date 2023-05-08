@@ -84,3 +84,43 @@ class demo{
 	public:
 	demo(int a){
 		
+..............
+	
+	
+	
+	
+	?
+	
+	
+	
+	...............
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main(){
+	ofstream fout;
+	fout.open("TEXT23.txt");
+	fout<<"Hello there";
+	fout.close();
+	return 0;
+}
+		
+		
+		
+		
+		
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main(){
+	ofstream fout;
+	string name;
+	cout<<": ";
+	cin>>name;
+	fout.open("TEXT.txt");
+	fout<<name;
+	fout.close();
+	return 0;
+}		
