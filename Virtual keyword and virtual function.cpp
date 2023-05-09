@@ -1,4 +1,10 @@
 //This contains the virtual keyword to resolve the ambuguity and the virtual function.
+//Points to be remembered for defining of virtual function.
+//Theycannot be static.
+//They are accessed by object pointers.
+//Virtual functions can be friend of another class.
+//A virtual function in base class might not be used.
+//If a virtual function is defined in a base class, there is no neccessity of redifining it in the derived class. 
 #include<iostream>
 using namespace std;
 
