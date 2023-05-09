@@ -1,3 +1,4 @@
+//This contains the virtual keyword to resolve the ambuguity and the virtual function.
 #include<iostream>
 using namespace std;
 
@@ -54,5 +55,34 @@ int main(){
 	obj1.setmarks(10,20);
 	obj1.getscore(30);
 	obj1.display();
+	return 0;
+}
+
+
+#include<iostream>
+using namespace std;
+
+class base{
+	public:
+		int var1;
+		virtual void display(){//This is the virtual function which comes under run time polymorphism(late binding).
+					//It's work is that if you create a base class pointer pointing at the derived class object.
+					//It will give the output for the function of the base class, if we are not using the virtual function.
+			cout<<"THis is the base class";
+		}
+};
+class derived:public base{
+	public:
+		int var2;
+		void display(){
+			cout<<"This the derived class";
+		}
+};
+int main(){
+	base *ptr1;
+	base obj1;
+	derived obj2;
+	ptr1 = &obj2;
+	ptr1->display();
 	return 0;
 }
