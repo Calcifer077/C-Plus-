@@ -124,3 +124,47 @@ int main(){
 	fout.close();
 	return 0;
 }		
+
+		
+		
+		
+		
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main(){
+	ofstream fout;
+	string name[30];
+	int uid[30], section[30];
+	int size;
+	cout<<"Enter the number of the students: ";
+	cin>>size;
+	for(int i = 0;i<size;i++){
+		cout<<"Enter name of the student "<<i+1<<" : ";
+		cin>>name[i];
+		cout<<"Enter uid of the student: "<<i+1<<" : ";
+		cin>>uid[i];
+		cout<<"ENter section of the student: "<<i+1<<" : ";
+		cin>>section[i];
+	}
+	fout.open("TEXT.txt");
+	for(int i = 0 ;i<size;i++){
+		fout<<"Name of the student "<<i+1<<" = "<<name[i]<<endl;
+		fout<<"UID of the student "<<i+1<<" = "<<uid[i]<<endl;
+		fout<<"Section of the student "<<i+1<<" = "<<section[i]<<endl;
+	
+	}
+	fout.close();
+	return 0;
+}
+		
+		
+//OUTPUT OF THE ABOVE PROGRAM:
+Name of the student 1 = Mahesh
+UID of the student 1 = 12691
+Section of the student 1 = 412
+Name of the student 2 = rahul
+UID of the student 2 = 10755
+Section of the student 2 = 412
+		
