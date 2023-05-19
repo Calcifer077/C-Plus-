@@ -30,7 +30,7 @@ using namespace std;
 
 
 int main(){
-	ifstream fin("sample.txt");//making an object of ifstrem which is used to write in a file.
+	ifstream fin("sample.txt");//making an object of ifstrem which is used to read in a file.
 	string st;
 	//fin>>st;//If we run this line it will only print the output of the first word.
 	getline(fin, st);//This line can read a full line.
