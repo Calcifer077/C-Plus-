@@ -29,6 +29,10 @@ During private mode, Public members of the base class becomes private members of
 During public mode, Public members remain public in the derived class.
 The private class of the base class are never inherited in the derived class.
 */
+/*
+program to get data of three employees of different class while taking one base class as their parent.
+example of hierarchal inheritance.
+*/
 #include<iostream>
 using namespace std;
 
@@ -164,6 +168,9 @@ return 0;
 .........................................................................................
 .........................................................................................
 .........................................................................................
+/*Program example of single inheritance.
+taking input from a single emplpyee
+*/
 #include<iostream>
 using namespace std;
 
@@ -197,6 +204,12 @@ int main(){
 	obj3.getdata();
 	return 0;
 }
+.........................................................................................
+.........................................................................................
+.........................................................................................
+/*
+program to access private data members
+*/
 #include<iostream>
 using namespace std;
 class base{
