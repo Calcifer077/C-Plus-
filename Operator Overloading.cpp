@@ -85,3 +85,79 @@ int main(){
 	t.display();
 	return 0;
 }
+.........................................................................................
+.........................................................................................
+.........................................................................................
+//Program to overload '+' operator and '==' operator to check if the two matrix entered are equal.
+#include<iostream>
+using namespace std;
+
+class matrix{
+	int arr[5][5];
+	
+	public:
+		void getdata(){
+			int i,j;
+			cout<<"Enter 3X3 matrix: ";
+			for(i = 0;i<3;i++){
+				for(j = 0;j<3;j++){
+					cin>>arr[i][j];
+				}
+			}
+		}
+		void operator+(matrix x);
+		bool operator==(matrix x);
+		void display(){
+			int i,j;
+			for(i =0 ;i<3;i++){
+				for(j=0;j<3;j++){
+					cout<<arr[i][j]<<" \t";
+				}
+				cout<<"\n";
+			}
+		}
+};
+void matrix::operator+(matrix x){
+	int mat[3][3];
+	int i,j;
+	for(i=0;i<3;i++){
+		for(j=0;j<3;j++){
+			mat[i][j] = arr[i][j] + x.arr[i][j];
+		}
+	}
+	cout<<"Sum of the matrixes: \n";
+	for(i=0;i<3;i++){
+		cout<<" ";
+		for(j=0;j<3;j++){
+			cout<<mat[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}
+}
+bool matrix::operator==(matrix x){
+	int i,j;
+	for(i = 0;i<3;i++){
+		for(j=0;j<3;j++){
+			if(arr[i][j]==x.arr[i][j]){
+			return true;
+		}
+		else{
+			return false;
+		}
+		}
+		
+	}
+}
+int main(){
+	matrix obj1, obj2;
+	obj1.getdata();
+	obj2.getdata();
+	obj1 + obj2;
+	if(obj1==obj2){
+		cout<<"YEs";
+	}
+	else{
+		cout<<"No";
+	}
+	return 0;
+}
