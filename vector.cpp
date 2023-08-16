@@ -27,8 +27,9 @@ int main(){
 	v.push_back(2);
 	v.push_back(3);
 	
-	vector<int>::iterator it;
-	for(it = v.begin(); it!=v.end();it++){
+	vector<int>::iterator it;//will create a iterator.
+	for(it = v.begin(); it!=v.end();it++){//v.begin():-> Go to the first position of the vector.
+					     //v.end():-> Go to the end of the vector.
 		cout<<*it<<endl;
 	}
 	
@@ -47,7 +48,7 @@ int main(){
 	v.push_back(2);
 	v.push_back(3);
 	
-	for(auto element:v){
+	for(auto element:v){//auto will automaticaly reconigise 'element' as a type of interger by knowing about vector 'v'.
 		cout<<element<<endl;
 	}
 	return 0;	
