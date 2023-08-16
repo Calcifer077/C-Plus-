@@ -1,40 +1,12 @@
 #include<iostream>
-#include<utility>
+#include<utility>//used to use pairs.
+//pairs are used when we want to store two type of data together.
 using namespace std;
 
 int main(){
-	pair <int,char> p;
-	p.first = 3;
-	p.second = 'f';
-	cout<<<p>;
-	return 0;
-}
-
-// CPP program to illustrate
-// auto-initializing of pair STL
-#include <iostream>
-#include <utility>
-
-using namespace std;
-
-int main()
-{
-	pair<int, double> PAIR1;
-	pair<string, char> PAIR2;
-
-	// it is initialised to 0
-	cout << PAIR1.first<<"1";
-
-	// it is initialised to 0
-	cout << PAIR1.second<<"2";
-
-	cout << " ";
-
-	// // it prints nothing i.e NULL
-	cout << PAIR2.first<<"3";
-	
-	// it prints nothing i.e NULL
-	cout << PAIR2.second<<"4";
-
+	pair <int,char> p;//here we declared a pair with name p with type int and char.
+	p.first = 3;//This is used to access first element in the pairt.
+	p.second = 'f';//Second element.
+	cout<<p.first;//can print only bu this way. can;t just write 'p'.
 	return 0;
 }
