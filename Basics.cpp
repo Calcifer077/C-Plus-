@@ -1,4 +1,4 @@
-//Datatypes
+//Datatypes-> IT means what type of data is stored in the memeory.
 #include<iostream>
 
 using namespace std;
