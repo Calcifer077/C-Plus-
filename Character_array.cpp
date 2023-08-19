@@ -1,3 +1,5 @@
+//Character array is just a group of characters.
+//The last element of this type of array is a NULL.
 #include<iostream>
 using namespace std;
 
