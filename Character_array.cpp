@@ -53,7 +53,7 @@ int main(){
 	//Find the largest word in a sentence;
 	int n;
 	cin>>n;
-	cin.ignore();
+	cin.ignore();//used to resolve input related problems. Used when cin and getline are used together.
 	char arr[n+1];
 	cin.getline(arr, n);//will take the input of the whole line.
 	cin.ignore();
