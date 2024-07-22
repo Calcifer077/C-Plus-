@@ -15,17 +15,29 @@ int main(){
 .........................................................................................
 //Sum of first 10 integers
 #include<iostream>
-
 using namespace std;
 
 int main(){
-	cout<<"Sum of first 10 numbers \n";
-	int sum =0;
-	for(int i = 0;i<10;i++){
-		sum += i;
-	}
-	cout<<sum;
-	return 0;
+    cout<<"Enter the number upto which you want to sum:";
+    int limit; cin>>limit;
+    
+    int sum = 0;
+    
+    // for(int i = 1; i <= limit; i++){
+    //     sum+= i;
+    // }
+    int i = 1;
+    // while(i <= limit){
+    //     sum+= i;
+    //     i++;
+    // }
+    
+    do{
+        sum+= i;
+        i++;
+    }while(i <= limit);
+    cout<<sum;
+    return 0;
 }
 .........................................................................................
 .........................................................................................
